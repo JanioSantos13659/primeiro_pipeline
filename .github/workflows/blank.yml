@@ -40,6 +40,8 @@ jobs:
 
   deploy-dev:
     needs: build
+    environment: 
+     name: dev
     runs-on: ubuntu-latest
 
     
