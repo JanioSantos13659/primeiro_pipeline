@@ -40,7 +40,7 @@ jobs:
 
   deploy-dev:
     needs: build
-    users: JanioSantos13659/.github/workflows/demo-deploy.yml@main
+    users: JanioSantos13659/pipeline_templates/.github/workflows/demo-deploy.yml@main
     with: 
      variavel-demo: "Demo Dev"
     
