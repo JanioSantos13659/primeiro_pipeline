@@ -1,0 +1,42 @@
+
+# nome da pipeline que será apresentado no githubactions
+name: CI
+
+# Configuração das triggers da pipeline
+on:
+  # Criação de PR das branch para main
+  # Todas as vezes que tiver um push na branch main, a pipeline automaticamente
+  push:
+    branches: [ "main" ]
+  # Todas as vezes que tiver uma pr (commit) na branch main, a pipeline executar automaticamente
+  pull_request:
+    branches: [ "main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Execução do jobs - Trabalhos que o pipeline vai realizar
+jobs:
+
+  # nome do jobs, pode ter mais de um
+  build:
+    # Sistema operacional onde o job vai rodar
+    runs-on: ubuntu-latest
+
+    # passos da execução, abaixo são as tarefas de execução
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+      
+              
+        
